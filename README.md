@@ -28,6 +28,7 @@
 
 1. Start the server in one terminal window by running this command `npm run dev`  or `npm run build:start`
 2. Open another terminal window and run this command `npm run test`
+3. If the test case fails please run the command again, it fails because of the fake data seeding library
 
 ![1707678648958](images/README/1707678648958.png)
 

@@ -43,7 +43,7 @@ describe('Register User - /api/register', () => {
       .set('Accept', 'application/json');
     expect(res.status).toEqual(400);
   });
-  test('Expecting 201 for random faker data', async () => {
+  test('Expecting 201 for registering new user', async () => {
     const res = await request(app)
       .post('/api/register')
       .send({
