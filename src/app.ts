@@ -14,6 +14,7 @@ import errorHandler from './middlewares/errorHandler';
 import infoController from './controllers/info/info.controller';
 import createUser from './controllers/user/createUser.controller';
 import login from './controllers/auth/login.controller';
+import deleteUser from './controllers/user/deleteUser.controller';
 
 //importing middlewares
 import { protect } from './middlewares/auth';
@@ -47,6 +48,9 @@ app.post('/api/login', login);
 // Protected routes
 app.use('/api/users', protect, userRoutes);
 
+// delete a user after creating for "TESTING" purpose
+app.delete('/api/user/:id', deleteUser);
+
 // testing the global error handler
 app.get('/error', (req, res, next) => {
   next(new Error('This is an error message'));
@@ -55,11 +59,8 @@ app.get('/error', (req, res, next) => {
 /// Global error handler
 app.use(errorHandler);
 
-
-if (NODE_ENV !== 'test') {
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
-}
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 export default app;

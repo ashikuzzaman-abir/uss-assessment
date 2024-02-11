@@ -32,7 +32,9 @@ export const protect = async (
       req.user = await User.findById(decoded?._id).select('-password');
       next();
     } catch (error: any) {
-      console.error(error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error(error);
+      }
       return res.status(401).json({ message: 'Not authorized, token failed' });
     }
   }

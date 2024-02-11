@@ -5,7 +5,7 @@ const errorHandler = (
   req: Request,
   res: Response,
   next: NextFunction
-) => {
+): Response | void => {
   if (NODE_ENV === 'development') {
     console.error(err);
     return res.status(500).json({ message: err.message, stack: err.stack });

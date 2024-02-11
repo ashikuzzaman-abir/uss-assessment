@@ -9,7 +9,11 @@ type BodyType = {
   password: string;
 };
 
-const login = async (req: any, res: Response, next: NextFunction) => {
+const login = async (
+  req: any,
+  res: Response,
+  next: NextFunction
+): Promise<Response | void> => {
   const { error } = validate(req.body);
   if (error) return res.status(400).json({ message: error.details[0].message });
   try {

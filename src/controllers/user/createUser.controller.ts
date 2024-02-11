@@ -10,7 +10,11 @@ type BodyType = {
   password: string;
 };
 
-const createUser = async (req: Request, res: Response, next: NextFunction) => {
+const createUser = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<Response | void> => {
   const { error } = validate(req.body);
   if (error) return res.status(400).json({ message: error.details[0].message });
   // create a user
@@ -27,7 +31,6 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
     const hashedPass = await bcrypt.hash(password, salt);
     req.body.password = hashedPass;
 
-    req.body.role = req.body.role || '65be6691caff8d8cbc1d3d91';
     const user = new User(req.body);
     const savedUser: any = await user.save();
     const { password: pass, ...userWithoutPassword } = savedUser._doc;
@@ -44,6 +47,7 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
+// for validating the req.body
 const validate = (data: BodyType): Joi.ValidationResult => {
   const schema = Joi.object({
     username: Joi.string()
