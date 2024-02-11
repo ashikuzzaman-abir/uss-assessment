@@ -29,7 +29,7 @@
 1. Go to the project's directory
 2. Start the server in one terminal window by running this command `npm run dev`  or `npm run build:start`
 3. Open another terminal window in the project's directory and run this command `npm run test`
-4. If the test case fails please run the command again, it could fail because of the faker.js data seeding library
+4. If the test cases fail, please run the command again, it could fail because of the faker.js data seeding library
 
 ![1707678648958](images/README/1707678648958.png)
 
