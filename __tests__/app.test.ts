@@ -47,9 +47,9 @@ describe('Register User - /api/register', () => {
     const res = await request(app)
       .post('/api/register')
       .send({
-        username: faker.internet.userName(),
-        email: faker.internet.email(),
-        password: faker.internet.password(),
+        username: "testuser",
+        email: "testuser@test.com",
+        password: "11223344",
       })
       .set('Accept', 'application/json');
     expect(res.status).toEqual(201);

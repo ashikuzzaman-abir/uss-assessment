@@ -28,9 +28,8 @@
 
 1. Start the server in one terminal window by running this command `npm run dev`  or `npm run build:start`
 2. Open another terminal window and run this command `npm run test`
-3. If any of the test fails then `press a` to restart the test script, it fails the test because of the random credential generation library (faker.js), It should work second time if not in first time.
 
- ![1707678648958](images/README/1707678648958.png)
+![1707678648958](images/README/1707678648958.png)
 
 ### Docker Setup Procedures
 
@@ -39,7 +38,6 @@
 3. Run this command to build with docker in terminal `docker build -t uss-assessment .`
 4. Run this command to start the app with Docker in terminal `docker run -p 8080:5000 uss-assessment`
 5. open a browser and go to [localhost:8080](http://localhost:8080/)
-
 
 ### API Documentation
 
