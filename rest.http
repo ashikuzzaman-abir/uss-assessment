@@ -1,0 +1,36 @@
+
+### ROOT ROUTE WHICH RETURNS "Hello, Node.js!"
+GET http://localhost:5000/
+
+###CADIDATE INFO ROUTE
+GET http://localhost:5000/api/info
+
+
+### TEST GLOBAL ERROR HANDLER
+GET http://localhost:5000/error
+
+
+### REGISTER A USER
+POST http://localhost:5000/api/register
+Content-Type: application/json
+
+{
+    "username": "johndoe",
+    "email": "john@gmail.com",
+    "password": "11223344"
+}
+
+
+### LOGIN
+POST http://localhost:5000/api/login
+Content-Type: application/json
+
+{
+    "username": "johndoe",
+    "password": "11223344"
+}
+
+###PROTECTED ROUTE - GET SELF INFO
+GET http://localhost:5000/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM4YTJiZjYwMDE4ZTM2MmNlZWFkZTMiLCJ1c2VybmFtZSI6ImpvaG5kb2UiLCJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaWF0IjoxNzA3NjQ4NDA1fQ.WTF-EfKZC7BoapLM2hjF1rHSMWFlBIRrEK71EbKNKPA
+
