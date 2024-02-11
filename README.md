@@ -45,7 +45,7 @@
 
 1. Open Postman in your machine
 2. Click on `Import` button
-3. Drag and Drop the `uss-assessment-api.postman_collection.json` file located in project directory's postman-api-documentation folder
+3. Drag and Drop the `uss-assessment-api.postman_collection.json` file located in project directory's `postman-api-documentation` folder
 4. Select a request from the collection and hit `Send` button
 5. All the examples of the request are in each request's drop down
 6. Click each example to view the headers and response
